@@ -1,4 +1,5 @@
 sudo: required
+language: generic
 services:
   - docker
 
@@ -6,4 +7,4 @@ before_install:
   - docker build -t samcamcode/docker-react -f Dockerfile.dev .
 
 scripts:
-  - docker run -e CI=true samcamcode/docker-react 
+  - docker run -e CI=true samcamcode/docker-react npm run test
